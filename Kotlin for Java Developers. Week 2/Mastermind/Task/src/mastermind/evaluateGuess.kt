@@ -42,7 +42,7 @@ fun wrongPosition(first: String, second: String): Int {
 
     for (c in reducedFirst) {
         if (reducedSecond.contains(c)) {
-            reducedSecond.removeAt(second.indexOf(c))
+            reducedSecond = reducedSecond.removeAt(reducedSecond.indexOf(c))
             result++
         }
     }
@@ -50,5 +50,5 @@ fun wrongPosition(first: String, second: String): Int {
 }
 
 fun String.removeAt(index: Int): String {
-    return this.removeRange(index, index)
+    return this.removeRange(index, index + 1)
 }
