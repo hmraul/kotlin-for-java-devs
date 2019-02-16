@@ -35,4 +35,7 @@ class MastermindTests {
 
     @Test
     fun testSameLetters() = testEvaluation("AABC", "DEAA", 0, 2)
+
+    @Test
+    fun testSomeLetters() = testEvaluation("EAAA", "ABCD", 0, 1)
 }
