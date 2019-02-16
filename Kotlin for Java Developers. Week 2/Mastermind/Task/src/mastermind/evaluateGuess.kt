@@ -30,9 +30,19 @@ fun sumIfEquals(a: Char, b: Char): Int {
 fun wrongPosition(first: String, second: String): Int {
     var result = 0
 
-    for (c in first) {
-        if (second.contains(c)) {
-            second.removeAt(second.indexOf(c))
+    var reducedFirst = ""
+    var reducedSecond = ""
+
+    for (i: Int in 0..(first.length - 1)) {
+        if (!first[i].equals(second[i])) {
+            reducedFirst += first[i]
+            reducedSecond += second[i]
+        }
+    }
+
+    for (c in reducedFirst) {
+        if (reducedSecond.contains(c)) {
+            reducedSecond.removeAt(second.indexOf(c))
             result++
         }
     }
